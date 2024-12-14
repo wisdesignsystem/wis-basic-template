@@ -1,0 +1,11 @@
+import type { Config } from "@wisdesign/cli";
+
+const config: Config = {
+  <% if (config.alias) { %>
+  alias: {
+    "@": "src",
+  },
+  <% } %>
+}
+
+export default config;

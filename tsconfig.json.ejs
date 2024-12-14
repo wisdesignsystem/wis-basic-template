@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom"],
+    "strict": false,
+    "noEmit": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      <% if (config.alias) { %>
+      "@/*": ["src/*"],
+      <% } %>
+    }
+  },
+  "include": ["src", ".wisrc.ts", "wis.d.ts"]
+}
