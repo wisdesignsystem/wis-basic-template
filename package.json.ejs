@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "<%= config.name %>",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    <% if (config.biome) { %>
+    "lint": "biome check --write",
+    <% } %>
+    "dev": "wis dev",
+    "build": "wis build"
+  },
+  <% if (config.biome) { %>
+  "lint-staged": {
+    "**/*.{ts,tsx,json}": "biome check --write"
+  },
+  <% } %>
+  "dependencies": {
+    "@wisdesign/lsicon": "0.0.4",
+    "react": "<%= dependencies['react'] %>",
+		"react-dom": "<%= dependencies['react-dom'] %>",
+		"react-router-dom": "<%= dependencies['react-router-dom'] %>",
+		"history": "<%= dependencies['history'] %>"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@babel/runtime": "<%= dependencies['@babel/runtime'] %>",
+    "@babel/runtime-corejs3": "<%= dependencies['@babel/runtime-corejs3'] %>",
+    "@wisdesign/cli": "<%= packages['@wisdesign/cli'] %>",
+    "@types/react": "<%= dependencies['@types/react'] %>",
+    "@types/react-dom": "<%= dependencies['@types/react-dom'] %>",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.7"
+  }
+}
